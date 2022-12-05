@@ -50,12 +50,15 @@ rooms = {
 # Initialize variables for the game
 treasure_found = False
 player_room = "In the sea 🌊"
+st.write("You are currently in the", player_room) 
+
+# Ask the player which room they want to move to
+room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
 
 # Main game loop
 while not treasure_found:        
         
-      # Ask the player which room they want to move to
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
+
 #      if room is not None:
           # Update the player's current room
  #         if room in rooms:
