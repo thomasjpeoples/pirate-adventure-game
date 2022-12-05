@@ -56,11 +56,12 @@ if not state.game_over:
         
       # Ask the player which room they want to move to
       #room = st.text_input("Which room do you want to move to?", key=state.game_number)
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
         
       # Update the player's current room
       if room in rooms:
         player_room = room
+        HI=+1
       else:
         st.write(room, " does not exist on the ship.")
  
