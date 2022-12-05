@@ -19,6 +19,7 @@ rooms = {
 # Initialize variables for the game
 treasure_found = False
 player_room = "galley"
+i = 0
 
 # Main game loop
 while not treasure_found:
@@ -33,6 +34,9 @@ while not treasure_found:
     player_room = room
   else:
     st.write("That room does not exist on the ship 😡")
+    
+  # Increment the counter variable
+  i += 1
 
   # Check if the player has found the treasure
   if player_room == "treasure_room":
