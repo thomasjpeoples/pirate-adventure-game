@@ -1,38 +1,37 @@
-import streamlit
-import pandas
-import requests
-
 # Initialize the game
-streamlit.title("Welcome to the Pirate Adventure game!")
-streamlit.header('You are a pirate on a quest to find treasure.')
+print("Welcome to the Pirate Adventure game!")
+print("You are a pirate on a quest to find treasure on a ship.")
+
+# Initialize the rooms on the ship
+rooms = {
+  "galley": (0, 0),
+  "lower deck": (0, 1),
+  "upperdeck": (0, 2),
+  "captain's quarters": (1, 0),
+  "crew's quarters": (1, 1),
+  "treasure room": (1, 2)
+}
 
 # Initialize variables for the game
 treasure_found = False
-treasure_x_coord = 0
-treasure_y_coord = 0
-player_x_coord = 0
-player_y_coord = 0
+player_room = "galley"
 
 # Main game loop
 while not treasure_found:
-  # Print the current location of the player
-  print("You are currently at coordinates:", player_x_coord, player_y_coord)
+  # Print the current room of the player
+  print("You are currently in the", player_room)
 
-  # Ask the player which direction they want to move
-  direction = input("Which direction do you want to move? (north, south, east, west) ")
+  # Ask the player which room they want to move to
+  room = input("Which room do you want to move to? (galley, lower deck, upper deck, captain's quarters, crew's quarters) ")
 
-  # Update the player's coordinates based on the direction they chose
-  if direction == "north":
-    player_y_coord += 1
-  elif direction == "south":
-    player_y_coord -= 1
-  elif direction == "east":
-    player_x_coord += 1
-  elif direction == "west":
-    player_x_coord -= 1
+  # Update the player's current room
+  if room in rooms:
+    player_room = room
+  else:
+    print("That room does not exist on the ship.")
 
   # Check if the player has found the treasure
-  if player_x_coord == treasure_x_coord and player_y_coord == treasure_y_coord:
+  if player_room == "treasure_room":
     treasure_found = True
 
 # The player has found the treasure!
