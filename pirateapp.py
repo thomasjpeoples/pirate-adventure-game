@@ -26,6 +26,7 @@ if st.button("More Pirate Adventures, please!"):
 # Create the rooms on the ship
 shrooms={'Name':["treasure room", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters"]}
 df=pd.DataFrame(shrooms)
+df=df.set_index('Name')
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
@@ -33,7 +34,7 @@ st.header("Your a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
 st.text("Pirates are pedants for spelling")
 st.text("The following rooms are available in the ship: ")
 # Display the table on the page.
-st.dataframe(shrooms)
+# st.dataframe(shrooms)
 
 # Initialize the rooms on the ship
 rooms = {
@@ -54,7 +55,8 @@ if not state.game_over:
     while not treasure_found:
         
       # Ask the player which room they want to move to
-      room = st.text_input("Which room do you want to move to?", key=state.game_number)
+      #room = st.text_input("Which room do you want to move to?", key=state.game_number)
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
         
       # Update the player's current room
       if room in rooms:
