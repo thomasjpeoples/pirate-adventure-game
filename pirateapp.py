@@ -66,6 +66,7 @@ if not state.game_over:
             # Print the current room of the player
             if room is not None:
                 st.write("You are currently in the", player_room) 
+                HI += 1
                 # Check if the player has found the treasure
                 if player_room == "treasure room":
                     treasure_found = True
