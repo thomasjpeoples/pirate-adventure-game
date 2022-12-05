@@ -7,7 +7,7 @@ import dataclasses
 from gamestate import persistent_game_state
 
 HI = 1000
-widget_id = (id for id in range(1, 7))
+widget_id = (id for id in range(1, HI))
 
 @dataclasses.dataclass
 class GameState:
@@ -49,7 +49,7 @@ rooms = {
 
 # Initialize variables for the game
 treasure_found = False
-player_room = "In the sea 🌊"
+#player_room = "In the sea 🌊"
 
 # Main game loop
 if not state.game_over:
