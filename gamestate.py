@@ -1,5 +1,3 @@
-# Cheers to JoelGrus for the below
-
 from typing import TypeVar
 import dataclasses
 
