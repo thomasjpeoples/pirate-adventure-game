@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas
+import requests
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
@@ -9,9 +11,9 @@ rooms = {
   "galley": (0, 0),
   "lower_deck": (0, 1),
   "upper_deck": (0, 2),
-  "captain's_quarters": (1, 0),
-  "crew's_quarters": (1, 1),
-  "treasure_room": (1, 2)
+  "captains quarters": (1, 0),
+  "crews quarters": (1, 1),
+  "treasure room": (1, 2)
 }
 
 # Initialize variables for the game
@@ -24,17 +26,17 @@ while not treasure_found:
   st.write("You are currently in the", player_room)
 
   # Ask the player which room they want to move to
-  room = st.selectbox("Which room do you want to move to?", ["galley", "lower_deck", "upper_deck", "captain's_quarters", "crew's_quarters"])
+  room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"])
 
-  # Update the player's current room
+  # Update the players current room
   if room in rooms:
     player_room = room
   else:
-    st.write("That room does not exist on the ship.")
+    st.write("That room does not exist on the ship 😡")
 
   # Check if the player has found the treasure
   if player_room == "treasure_room":
     treasure_found = True
 
 # The player has found the treasure!
-st.write("Congratulations, you have found the treasure!")
+st.write("Congratulations, you have found the treasure! 🍾 🎆")
