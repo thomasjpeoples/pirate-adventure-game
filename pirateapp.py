@@ -30,9 +30,9 @@ df=df.set_index('Name')
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
-st.header("Your a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
+st.header("_Your_ a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
 st.text("Pirates are pedants for spelling")
-st.text("The following rooms are available in the ship: ")
+# st.text("The following rooms are available in the ship: ")
 # Display the table on the page.
 # st.dataframe(shrooms)
 
