@@ -63,7 +63,7 @@ if not state.game_over:
         st.write(room, " does not exist on the ship.")
  
       # Print the current room of the player
-      if room is not Null:
+      if room is not empty:
         st.write("You are currently in the", player_room)        
         
       # Check if the player has found the treasure
