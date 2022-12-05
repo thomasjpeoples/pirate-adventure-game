@@ -60,13 +60,13 @@ if not state.game_over:
       #room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
       room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
       if len(room) != 0:  
+          HI += 1
           # Update the player's current room
           if room in rooms:
             player_room = room
             # Print the current room of the player
             if room is not None:
                 st.write("You are currently in the", player_room) 
-                HI += 1
                 # Check if the player has found the treasure
                 if player_room == "treasure room":
                     treasure_found = True
