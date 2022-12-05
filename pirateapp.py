@@ -33,7 +33,7 @@ st.header("Your a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
 st.text("Pirates are pedants for spelling")
 st.text("The following rooms are available in the ship: ")
 # Display the table on the page.
-st.DataFrame(shrooms)
+st.dataframe(shrooms)
 
 # Initialize the rooms on the ship
 rooms = {
