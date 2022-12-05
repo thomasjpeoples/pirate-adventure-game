@@ -26,6 +26,8 @@ if st.button("More Pirate Adventures, please!"):
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
 st.header("You are a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
+st.text("The following rooms are available in the ship! Pirates are pedants for spelling, too")
+st.text("treasure room, galley, lower deck, upper deck, captains quarters, crews quarters)
 
 # Initialize the rooms on the ship
 rooms = {
@@ -48,7 +50,8 @@ if not state.game_over:
       st.write("You are currently in the", player_room)
 
       # Ask the player which room they want to move to
-      room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"], key=state.game_number)
+      # room = st.selectbox("Which room do you want to move to?", ["treasure room", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters"], key=state.game_number)
+      room = st.text_input("Which room do you want to move to?", key=state.game_number)
 
       # Update the player's current room
       if room in rooms:
