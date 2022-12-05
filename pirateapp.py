@@ -19,7 +19,7 @@ class GameState:
 state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
 
 if st.button("More Pirate Adventures, please!"):
-    state.number = random.randint(1, 7)
+    state.number = random.randint(1, HI)
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
@@ -57,7 +57,8 @@ if not state.game_over:
         
       # Ask the player which room they want to move to
       #room = st.text_input("Which room do you want to move to?", key=state.game_number)
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
+      #room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
       if len(room) != 0:  
           # Update the player's current room
           if room in rooms:
