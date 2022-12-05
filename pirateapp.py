@@ -25,7 +25,7 @@ if st.button("More Pirate Adventures, please!"):
 
 # Create the rooms on the ship
 shrooms={'Name':["treasure room", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters"]}
-df=pd.dataframe(shrooms)
+df=pd.DataFrame(shrooms)
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
@@ -33,7 +33,7 @@ st.header("Your a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
 st.text("Pirates are pedants for spelling")
 st.text("The following rooms are available in the ship: ")
 # Display the table on the page.
-st.dataframe(shrooms)
+st.DataFrame(shrooms)
 
 # Initialize the rooms on the ship
 rooms = {
