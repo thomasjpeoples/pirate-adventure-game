@@ -1,7 +1,27 @@
 import streamlit as st
 import pandas
 import requests
-from urllib.error import URLError
+import random
+import dataclasses
+
+from gamestate import persistent_game_state
+
+HI = 1000
+
+@dataclasses.dataclass
+class GameState:
+    number: int
+    num_guesses: int = 0
+    game_number: int = 0
+    game_over: bool = False
+
+state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
+
+if st.button("More Pirate Adventures, please!"):
+    state.number = random.randint(1, HI)
+    state.num_guesses = 0
+    state.game_number += 1
+    state.game_over = False
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
@@ -22,23 +42,19 @@ treasure_found = False
 player_room = "galley"
 
 # Main game loop
+if not state.game_over:
 while not treasure_found:
   # Print the current room of the player
   st.write("You are currently in the", player_room)
   
-# Ask the player which room they want to move to
-  if st.button("Move to galley", key="move_g"):
-    player_room = "galley"
-  if st.button("Move to lower deck", key="move_ld"):
-    player_room = "lower deck"
-  if st.button("Move to upper deck", key="move_ud"):
-    player_room = "upper deck"
-  if st.button("Move to captains quarters", key="move_cap_q"):
-    player_room = "captains quarters"
-  if st.button("Move to crews quarters", key="move_crew_q"):
-    player_room = "crews quarters"
-  if st.button("Find the treasure", key="AHA"):
-    player_room = "treasure room"
+  # Ask the player which room they want to move to
+  room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"], key=state.game_number)
+
+  # Update the player's current room
+  if room in rooms:
+    player_room = room
+  else:
+    st.write("That room does not exist on the ship.")
     
   # Check if the player has found the treasure
   if player_room == "treasure_room":
@@ -46,6 +62,3 @@ while not treasure_found:
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
-
-except URLError as e:
-  streamlit.error()
