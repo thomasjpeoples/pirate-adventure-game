@@ -26,7 +26,7 @@ while not treasure_found:
   st.write("You are currently in the", player_room)
 
   # Ask the player which room they want to move to
-  room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"])
+  room = st.selectbox("Which room do you want to move to?", ["galley", "lower_deck", "upper_deck", "captain's_quarters", "crew's_quarters"], key="room_select")
 
   # Update the players current room
   if room in rooms:
