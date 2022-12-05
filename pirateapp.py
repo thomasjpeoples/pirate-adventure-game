@@ -56,22 +56,18 @@ st.write("You are currently in the", player_room)
 room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
 
 # Main game loop
-while not treasure_found:        
-        
-
-#      if room is not None:
+while not treasure_found and room is not None:        
           # Update the player's current room
- #         if room in rooms:
-  #          player_room = room
+          if room in rooms:
+            player_room = room
             # Print the current room of the player
-   #         if room is not None:
-    #            st.write("You are currently in the", player_room) 
+            if room is not None:
+                st.write("You are currently in the", player_room) 
                 # Check if the player has found the treasure
-     #           if player_room == "treasure room":
-      #              treasure_found = True
-       #         HI += 1
-        #  else:
-         #   st.write(room, " does not exist on the ship.") 
+                if player_room == "treasure room":
+                    treasure_found = True
+          else:
+            st.write(room, " does not exist on the ship.") 
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
