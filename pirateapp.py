@@ -27,7 +27,7 @@ if st.button("More Pirate Adventures, please!"):
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
 st.header("You are a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
 st.text("The following rooms are available in the ship! Pirates are pedants for spelling, too")
-st.text("treasure room, galley, lower deck, upper deck, captains quarters, crews quarters)
+st.text("treasure room, galley, lower deck, upper deck, captains quarters, crews quarters")
 
 # Initialize the rooms on the ship
 rooms = {
