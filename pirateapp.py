@@ -40,7 +40,7 @@ while not treasure_found:
     treasure_found = True
 
   # Increment the counter variable
-  # i += 1
+  i += 1
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
