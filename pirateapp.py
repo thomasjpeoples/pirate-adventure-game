@@ -19,25 +19,30 @@ rooms = {
 # Initialize variables for the game
 treasure_found = False
 player_room = "galley"
-i = 0
 
 # Main game loop
 while not treasure_found:
   # Print the current room of the player
   st.write("You are currently in the", player_room)
-
-  # Ask the player which room they want to move to
-  room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"], key="room_select" + str(i))
-
+  
+# Ask the player which room they want to move to
+  if st.button("Move to galley"):
+    player_room = "galley"
+  if st.button("Move to lower deck"):
+    player_room = "lower deck"
+  if st.button("Move to upper deck"):
+    player_room = "upper deck"
+  if st.button("Move to captains quarters"):
+    player_room = "captains quarters"
+  if st.button("Move to crews quarters"):
+    player_room = "crews quarters"
+    
   # Update the players current room
   if room in rooms:
     player_room = room
-    # Increment the counter variable
-    i += 1
+
   else:
     st.write("That room does not exist on the ship 😡")
-    # Increment the counter variable
-    i += 1
     
   # Check if the player has found the treasure
   if player_room == "treasure_room":
