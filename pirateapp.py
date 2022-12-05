@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas
+import pandas as pd
 import requests
 import random
 import dataclasses
@@ -23,11 +23,17 @@ if st.button("More Pirate Adventures, please!"):
     state.game_number += 1
     state.game_over = False
 
+# Create the rooms on the ship
+shrooms={'Name':["treasure room", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters"]}
+df=pd.dataframe(shrooms)
+
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
-st.header("You are a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
-st.text("The following rooms are available in the ship! Pirates are pedants for spelling, too")
-st.text("treasure room, galley, lower deck, upper deck, captains quarters, crews quarters")
+st.header("Your a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰 ")
+st.text("Pirates are pedants for spelling")
+st.text("The following rooms are available in the ship: ")
+# Display the table on the page.
+st.dataframe(shrooms)
 
 # Initialize the rooms on the ship
 rooms = {
