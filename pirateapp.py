@@ -7,7 +7,7 @@ import dataclasses
 from gamestate import persistent_game_state
 
 HI = 1000
-widget_id = (id for id in range(1, HI))
+widget_id = (id for id in range(1, 7))
 
 @dataclasses.dataclass
 class GameState:
@@ -25,7 +25,7 @@ if st.button("More Pirate Adventures, please!"):
     state.game_over = False
 
 # Create the rooms on the ship
-shrooms={'Name':["Walk the Plank!", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters", "treasure room"]}
+shrooms={'Name':["", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters", "treasure room"]}
 df=pd.DataFrame(shrooms)
 df=df.set_index('Name')
 
