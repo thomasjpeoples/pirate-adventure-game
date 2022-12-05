@@ -58,9 +58,9 @@ if not state.game_over:
       # Ask the player which room they want to move to
       #room = st.text_input("Which room do you want to move to?", key=state.game_number)
       #room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
       if len(room) != 0:  
-          HI += 1
+          # HI += 1
           # Update the player's current room
           if room in rooms:
             player_room = room
