@@ -9,8 +9,8 @@ st.header("You are a pirate on a quest to find treasure on a ship. 🚢 ⚓ 💰
 # Initialize the rooms on the ship
 rooms = {
   "galley": (0, 0),
-  "lower_deck": (0, 1),
-  "upper_deck": (0, 2),
+  "lower deck": (0, 1),
+  "upper deck": (0, 2),
   "captains quarters": (1, 0),
   "crews quarters": (1, 1),
   "treasure room": (1, 2)
@@ -26,7 +26,7 @@ while not treasure_found:
   st.write("You are currently in the", player_room)
 
   # Ask the player which room they want to move to
-  room = st.selectbox("Which room do you want to move to?", ["galley", "lower_deck", "upper_deck", "captain's_quarters", "crew's_quarters"], key="room_select")
+  room = st.selectbox("Which room do you want to move to?", ["galley", "lower deck", "upper deck", "captains quarters", "crews quarters"], key="room_select" + str(i))
 
   # Update the players current room
   if room in rooms:
