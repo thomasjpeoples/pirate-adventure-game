@@ -52,12 +52,11 @@ player_room = "In the sea 🌊"
 
 # Main game loop
 if not state.game_over:
-    while not treasure_found:
-        
-        HI += 1
+    while not treasure_found:        
         
       # Ask the player which room they want to move to
       #room = st.text_input("Which room do you want to move to?", key=state.game_number)
+      HI += 1
       room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
         
       # Update the player's current room
