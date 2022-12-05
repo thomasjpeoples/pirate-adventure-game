@@ -32,15 +32,16 @@ while not treasure_found:
   # Update the players current room
   if room in rooms:
     player_room = room
+    # Increment the counter variable
+    i += 1
   else:
     st.write("That room does not exist on the ship 😡")
+    # Increment the counter variable
+    i += 1
     
   # Check if the player has found the treasure
   if player_room == "treasure_room":
     treasure_found = True
-
-  # Increment the counter variable
-  i += 1
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
