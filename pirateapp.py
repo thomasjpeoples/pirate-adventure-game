@@ -37,13 +37,6 @@ while not treasure_found:
   if st.button("Move to crews quarters"):
     player_room = "crews quarters"
     
-  # Update the players current room
-  if room in rooms:
-    player_room = room
-
-  else:
-    st.write("That room does not exist on the ship 😡")
-    
   # Check if the player has found the treasure
   if player_room == "treasure_room":
     treasure_found = True
