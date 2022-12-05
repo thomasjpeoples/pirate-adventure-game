@@ -19,7 +19,7 @@ class GameState:
 state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
 
 if st.button("More Pirate Adventures, please!"):
-    state.number = random.randint(1, HI)
+    state.number = random.randint(1, 7)
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
@@ -49,7 +49,7 @@ rooms = {
 
 # Initialize variables for the game
 treasure_found = False
-#player_room = "In the sea 🌊"
+player_room = "In the sea 🌊"
 
 # Main game loop
 if not state.game_over:
