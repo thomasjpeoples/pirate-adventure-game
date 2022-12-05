@@ -7,6 +7,7 @@ import dataclasses
 from gamestate import persistent_game_state
 
 HI = 1000
+widget_id = (id for id in range(1, 7))
 
 @dataclasses.dataclass
 class GameState:
@@ -56,22 +57,19 @@ if not state.game_over:
         
       # Ask the player which room they want to move to
       #room = st.text_input("Which room do you want to move to?", key=state.game_number)
-      HI += 1
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
-        
-      # Update the player's current room
-      if room in rooms:
-        player_room = room
-      else:
-        st.write(room, " does not exist on the ship.")
- 
-      # Print the current room of the player
-      if room is not None:
-        st.write("You are currently in the", player_room)        
-        
-      # Check if the player has found the treasure
-      if player_room == "treasure room":
-        treasure_found = True
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
+      if len(room) != 0:  
+          # Update the player's current room
+          if room in rooms:
+            player_room = room
+            # Print the current room of the player
+            if room is not None:
+                st.write("You are currently in the", player_room) 
+                # Check if the player has found the treasure
+                if player_room == "treasure room":
+                    treasure_found = True
+          else:
+            st.write(room, " does not exist on the ship.") 
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
