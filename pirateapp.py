@@ -48,7 +48,7 @@ rooms = {
 
 # Initialize variables for the game
 treasure_found = False
-player_room = "galley"
+player_room = "In the sea 🌊"
 
 # Main game loop
 if not state.game_over:
