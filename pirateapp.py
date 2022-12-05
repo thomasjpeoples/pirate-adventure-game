@@ -32,9 +32,9 @@ while not treasure_found:
     player_room = "lower deck"
   if st.button("Move to upper deck", key="move_ud"):
     player_room = "upper deck"
-  if st.button("Move to captains quarters", key="move_cq"):
+  if st.button("Move to captains quarters", key="move_cap_q"):
     player_room = "captains quarters"
-  if st.button("Move to crews quarters", key="move_cq"):
+  if st.button("Move to crews quarters", key="move_crew_q"):
     player_room = "crews quarters"
     
   # Check if the player has found the treasure
