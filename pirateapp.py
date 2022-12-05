@@ -52,8 +52,7 @@ treasure_found = False
 player_room = "In the sea 🌊"
 
 # Main game loop
-if not state.game_over:
-    while not treasure_found:        
+while not treasure_found:        
         
       # Ask the player which room they want to move to
       room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
