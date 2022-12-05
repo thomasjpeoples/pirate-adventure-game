@@ -36,6 +36,8 @@ while not treasure_found:
     player_room = "captains quarters"
   if st.button("Move to crews quarters", key="move_crew_q"):
     player_room = "crews quarters"
+  if st.button("Find the treasure", key="AHA"):
+    player_room = "treasure room"
     
   # Check if the player has found the treasure
   if player_room == "treasure_room":
