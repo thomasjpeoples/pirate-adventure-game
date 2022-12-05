@@ -24,7 +24,7 @@ if st.button("More Pirate Adventures, please!"):
     state.game_over = False
 
 # Create the rooms on the ship
-shrooms={'Name':["treasure room", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters"]}
+shrooms={'Name':["Walk the Plank!", "galley", "lower deck", "upper deck", "captains quarters", "crews quarters", "treasure room"]}
 df=pd.DataFrame(shrooms)
 df=df.set_index('Name')
 
