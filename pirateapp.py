@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas
 import requests
+from urllib.error import URLError
 
 # Initialize the game
 st.title("Pirate Adventure Game 🏴‍☠️ 🦜 ⚔️")
@@ -45,3 +46,6 @@ while not treasure_found:
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
+
+except URLError as e:
+  streamlit.error()
