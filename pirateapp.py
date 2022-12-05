@@ -56,23 +56,20 @@ if not state.game_over:
     while not treasure_found:        
         
       # Ask the player which room they want to move to
-      #room = st.text_input("Which room do you want to move to?", key=state.game_number)
-      #room = st.selectbox("Which room do you want to move to?", list(df.index), key=next(widget_id))
-      room = st.selectbox("Which room do you want to move to?", list(df.index), key=HI)
-      if room is not None:
+      room = st.selectbox("Which room do you want to move to?", list(df.index), key=state.game_number)
+#      if room is not None:
           # Update the player's current room
-          if room in rooms:
-            player_room = room
+ #         if room in rooms:
+  #          player_room = room
             # Print the current room of the player
-            if room is not None:
-                st.write("You are currently in the", player_room) 
+   #         if room is not None:
+    #            st.write("You are currently in the", player_room) 
                 # Check if the player has found the treasure
-                if player_room == "treasure room":
-                    treasure_found = True
-                HI += 1
-          else:
-            st.write(room, " does not exist on the ship.") 
-            HI += 1
+     #           if player_room == "treasure room":
+      #              treasure_found = True
+       #         HI += 1
+        #  else:
+         #   st.write(room, " does not exist on the ship.") 
   
 # The player has found the treasure!
 st.write("Congratulations, you have found the treasure! 🍾 🎆")
