@@ -1,2 +1,2 @@
 # pirate-chatgpt-game
-A simple text based adventure game built by the Chat GPT OpenAI
+A simple text based adventure game to explore classes, dunders and decorators
